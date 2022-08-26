@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Times New Roman'; 
+}
+
+.headerContainer {
+    display: grid; 
+    grid-template-columns: repeat(15, auto );
+    background-color: black;
+    color: white; 
+    gap: 10px; 
+    text-align: center;
+}
+.blueThemeBtn, 
+.greenThemeBtn, 
+.pinkThemeBtn, 
+.bluePinkGradient, 
+.bluePurpleGradient,
+.greenBlueGradient, 
+.resetThemeBtn {
+    border: 5px solid gray; 
+    border-radius: 10px;
+    padding: 20px;  
+}
+
+.blueThemeBtn {
+    background-color: #72A0C1;
+    border-color: royalblue;
+}
+.blueThemeBtn:active {
+    background-color: darkblue;
+    border-color: lightblue;
+}
+.greenThemeBtn {
+    background-color: #87A96B;
+    border-color: darkgreen; 
+
+}
+.greenThemeBtn:active {
+    background-color: #4B6F44;
+    border-color: #87A96B;
+}
+.pinkThemeBtn {
+    background-color: #eec0c8;
+    border-color: #F9629F; 
+}
+.pinkThemeBtn:active {
+    background-color: #FF69B4;
+    border-color: #eec0c8;
+}
+.bluePinkGradient {
+    background: linear-gradient(to right,#72A0C1, #eec0c8 );
+    border-color: gray
+}
+.bluePurpleGradient {
+    background: linear-gradient(to right, #002D62,#720e9e );
+}
+.greenBlueGradient {
+    background: linear-gradient(to right, #87A96B, #72A0C1);
+}
+
+/* grid container */ 
+.gridStylesContainer {
+    display: flex; 
+    grid-template-columns: auto;
+    grid-template-rows: auto; 
+    flex-grow: 0; 
+    flex-shrink: 1;
+}
+
+.gridStylesContainer {
+    display: grid; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px; 
+}
+.gridContainer {
+    display: grid; 
+    border: 3px solid yellow;  
+    width: 600px; 
+    height: 600px; 
+}
+.gridCell {
+    border: 1px solid rgba(0, 0, 0,0.3); 
+    background-color: snow; 
+}
+.gridBtnContainer {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+
+}
+.gridSizeBtn, 
+.resetBtn {
+    justify-content: center;
+    display: inline-block; 
+    padding: 12px; 
+}
