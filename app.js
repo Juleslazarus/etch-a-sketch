@@ -1,80 +1,59 @@
-// Theme Color Selector Button Variables
-const blueThemeBtn = document.querySelector('.blueThemeBtn'); 
-const greenThemeBtn = document.querySelector('.greenThemeBtn'); 
-const pinkThemeBtn = document.querySelector('.pinkThemeBtn'); 
-const bluePinkGradient = document.querySelector('.bluePinkGradient'); 
-const bluePurpleGradient = document.querySelector('.bluePurpleGradient'); 
-const greenBlueGradient = document.querySelector('.greenBlueGradient'); 
-const resetThemeBtn = document.querySelector('.resetThemeBtn'); 
-const headerContainer = document.querySelector('.headerContainer'); 
-const headerText = document.querySelectorAll('h1');
 
 
-//body var for the change of theme color 
-const body = document.querySelector('body'); 
+// all the const we need for the app to run 
+const pixelproHeader = document.querySelector('.pixelproHeader'); 
 
-//logic for Theme color changing 
-blueThemeBtn.addEventListener('mouseover', () => {
-    body.style.background = '#72A0C1'; 
-}); 
+const shakeBtn = document.querySelector('.shakeBtn'); 
 
-greenThemeBtn.addEventListener('mouseover', () => {
-    body.style.background = '#87A96B'; 
-});
+const eraserBtn = document.querySelector('.eraserBtn'); 
 
-pinkThemeBtn.addEventListener('mouseover', () => {
-    body.style.background = '#eec0c8'; 
-}); 
+const pixelproContainer = document.querySelector('.pixelproContainer'); 
 
-bluePinkGradient.addEventListener('mouseover', () => {
-    body.style.background = 'linear-gradient(to right,#72A0C1,#eec0c8 )'; 
-})
+let random = Math.floor(Math.random() * 255 + 1); 
 
-bluePurpleGradient.addEventListener('mouseover', () => {
-    body.style.background = 'linear-gradient(to right, #002D62, #720e9e )'; 
-})
+const gridSize = prompt('Pick A Number Between 1 - 100'); 
 
-greenBlueGradient.addEventListener('mouseover', () => {
-    body.style.background = 'linear-gradient(to right, #87A96B, #72A0C1)'; 
-})
-
-resetThemeBtn.addEventListener('mouseover', () => {
-    body.style.background = 'white'; 
-})
-
-//grid area 
-const gridSizeBtn = document.querySelector('.gridSizeBtn'); 
-
-const gridContainer = document.querySelector('.gridContainer'); 
-const resetBtn =document.querySelector('.resetBtn'); 
-
-
-const size = prompt('1-100'); 
-
-function grid() {
-    gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
-    gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`
-    for (let i = 0; i < size * size; i++) {
-        const widthAndHeight = 600 / size; 
-        const gridCell = document.createElement('div'); 
-        gridCell.classList.add('gridCell'); 
-        gridCell.style.width = `${widthAndHeight}px`;
-        gridCell.style.height = `${widthAndHeight}px`;
-        gridContainer.appendChild(gridCell); 
-        gridCell.addEventListener('mouseover', changeColor); 
-        // for (let j = 0; j < size; j++) {
-        //     const gridCell = document.createElement('div'); 
-        //     gridCell.classList.add('gridCell'); 
-        //     gridContainer.appendChild(gridCell); 
-        // }
-      function changeColor() {
-  gridCell.style.backgroundColor = 'black'; 
+if (gridSize >= 101) {
+    alert("OH NO! You picked a number that's too HIGH! PICK LOWER"); 
+    location.reload(); 
+}else if (gridSize < 1) {
+    alert("OH NO! You picked a number that's too LOW! PICK HIGHER")
+    location.reload();  
 }
-      
+
+// all the functions 
+
+// for the different colors to work we can make a function that always runs that colors the gridcells but when a button is clicked that function is changed to the colored version?
+
+function reloadGrid() {
+    location.reload(); 
+}
+
+const createGrid = () => {
+    pixelproContainer.style.gridTemplateColumns = `repeat(${gridSize}, ${gridSize})`
+    pixelproContainer.style.gridTemplateRows = `repeat(${gridSize}, ${gridSize})`
+
+    for (let i = 0; i < gridSize; i++) {
+        const gridRow = document.createElement('div'); 
+        gridRow.classList.add('gridRow'); 
+        pixelproContainer.appendChild(gridRow); 
+        for (let j = 0; j < gridSize; j++){
+            const gridCell = document.createElement('div'); 
+            gridCell.classList.add('gridCell'); 
+            gridRow.appendChild(gridCell); 
+        }
 
     }
 }
 
+const black = () => {
+   
+}
+
+// running functions that need to be constantly running
 
 
-grid(size); 
+
+// all the event listeners 
+
+shakeBtn.addEventListener('click', reloadGrid); 
