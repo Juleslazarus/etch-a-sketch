@@ -70,7 +70,7 @@ const createGrid = () => {
         gridCell.style.height = `${widthAndHeight}px`
         pixelproContainer.appendChild(gridCell); 
 
-        gridCell.addEventListener('mouseover', colorCell);
+        // gridCell.addEventListener('mouseover', colorCell);
         
         let COLOR = '#000000'
 
