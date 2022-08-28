@@ -7,6 +7,10 @@ const shakeBtn = document.querySelector('.shakeBtn');
 
 const eraserBtn = document.querySelector('.eraserBtn'); 
 
+const blackBtn = document.querySelector('.blackBtn'); 
+
+const rainbowBtn = document.querySelector('.rainbowBtn'); 
+
 const pixelproContainer = document.querySelector('.pixelproContainer'); 
 
 let random = Math.floor(Math.random() * 255 + 1); 
@@ -30,30 +34,55 @@ function reloadGrid() {
 }
 
 const createGrid = () => {
-    pixelproContainer.style.gridTemplateColumns = `repeat(${gridSize}, ${gridSize})`
-    pixelproContainer.style.gridTemplateRows = `repeat(${gridSize}, ${gridSize})`
+    pixelproContainer.style.gridTemplateColumns = `repeat(${gridSize}, auto)`
+    pixelproContainer.style.gridTemplateRows = `repeat(${gridSize}, auto)`
+    const widthAndHeight = 700 / gridSize; 
 
-    for (let i = 0; i < gridSize; i++) {
-        const gridRow = document.createElement('div'); 
-        gridRow.classList.add('gridRow'); 
-        pixelproContainer.appendChild(gridRow); 
-        for (let j = 0; j < gridSize; j++){
-            const gridCell = document.createElement('div'); 
-            gridCell.classList.add('gridCell'); 
-            gridRow.appendChild(gridCell); 
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        const gridCell = document.createElement('div'); 
+        gridCell.classList.add('gridCell'); 
+        gridCell.style.width = `${widthAndHeight}px`
+        gridCell.style.height = `${widthAndHeight}px`
+        pixelproContainer.appendChild(gridCell); 
+
+        gridCell.addEventListener('mouseover', colorCell);
+        
+        let COLOR = '#000000'
+
+        function randomHex() {
+            let n = (Math.random() * 0xfffff * 1000000).toString(16);
+            return '#' + n.slice(0, 6);
+          }        
+        eraserBtn.addEventListener('click', () => {
+            COLOR = '#efefef'; 
+        })
+
+        blackBtn.addEventListener('click', () => {
+            COLOR = '#000001'; 
+        })
+
+        rainbowBtn.addEventListener('click', () => {
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = `${randomHex()}`
+            })
+        })
+
+
+        
+        function colorCell() {
+            gridCell.style.backgroundColor = `${COLOR}`; 
         }
-
+        
     }
 }
 
-const black = () => {
-   
-}
 
 // running functions that need to be constantly running
-
+createGrid(); 
 
 
 // all the event listeners 
 
 shakeBtn.addEventListener('click', reloadGrid); 
+
+console.log(`#${random}${random}${random}${random}${random}${random}`)

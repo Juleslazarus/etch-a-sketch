@@ -66,10 +66,8 @@ body {
     width: 700px; 
     background: white; 
     box-shadow: 1px 1px 50px 1px rgba(98, 255, 213, 1); 
-    border: 50px solid #409c6e; 
-    border-radius: 20px; 
-
 }
 .gridCell {
-    border: 2px solid black; 
+    border: 1px solid rgba(0, 0, 0, 0.3); 
+    background: #efefef;
 }
