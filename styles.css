@@ -31,17 +31,26 @@ body {
     padding: 15px; 
 }
 
-.btnContainer {
+.colorBtnContainer {
     display: flex; 
     justify-content: center;
-    padding-top: 30px; 
+    padding-top: 10px; 
     gap: 20px; 
+}
+.settingsBtnContainer {
+    display: flex; 
+    justify-content: center;
+    padding-top: 5px; 
+    gap: 20px; 
+    
 }
 
 .shakeBtn, 
 .eraserBtn, 
 .blackBtn, 
-.rainbowBtn{
+.rainbowBtn, 
+.shaderBtn, 
+.highlightBtn {
     text-decoration: none;
     color: rgba(255,255,255,0.9);
     font-size: 25px; 
@@ -51,17 +60,70 @@ body {
     
 }
 
+/* styles for all the buttons   */
+
 .shakeBtn:hover,
 .eraserBtn:hover, 
 .blackBtn:hover, 
-.rainbowBtn:hover {
+.rainbowBtn:hover, 
+.shaderBtn:hover, 
+.highlightBtn:hover, 
+.blueBtn:hover, 
+.yellowBtn:hover, 
+.greenBtn:hover, 
+.redBtn:hover, 
+.pinkBtn:hover, 
+.purpleBtn:hover, 
+.brownBtn:hover  {
     background-color: white; 
     color: rgba(98, 255, 213, 1);
 }
 
+/* styles for the buttons that choose color  */
+
+.blueBtn, 
+.yellowBtn, 
+.greenBtn, 
+.redBtn, 
+.pinkBtn, 
+.purpleBtn, 
+.brownBtn {
+    text-decoration: none;
+    color: rgba(255,255,255,0.9);
+    font-size: 0; 
+    background:rgb(255, 255, 255, 0.29); 
+    padding: 25px; 
+    border-radius: 15px; 
+
+}
+.blueBtn {
+    background: rgba(0, 0, 255, 0.6); 
+}
+
+.yellowBtn {
+    background: rgba(255,255, 0, 0.6); 
+}
+
+.greenBtn {
+    background: rgba(0, 255, 0, 0.6); 
+}
+.redBtn {
+    background: rgba(255, 0,0, 0.6)
+}
+
+.pinkBtn {
+    background: rgba(255,192,203, 0.6); 
+}
+
+.purpleBtn {
+    background: rgba(255, 0, 255, 0.6); 
+}
+.brownBtn {
+    background: rgba(165, 42, 42, 0.6); 
+}
 .pixelproContainer {
     display: grid; 
-    margin: 50px; 
+    margin-top: 15px; 
     height: 700px; 
     width: 700px; 
     background: white; 
@@ -71,3 +133,28 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.3); 
     background: #efefef;
 }
+
+
+.footer {
+    background: rgba(255,255,255,0.3);
+    display: grid;
+    grid-template-columns: repeat(12,auto);
+    justify-content: center;
+    padding: 5px;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  
+  .linkedinimg,
+  .githubimg,
+  .instaimg, 
+  .gmailimg {
+    height: auto;
+    width: 30px;
+    display: grid;
+  }
+  .tiktokimg {
+    height: auto; 
+    width: 25px; 
+    display: grid; 
+  }

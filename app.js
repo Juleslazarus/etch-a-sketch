@@ -11,9 +11,28 @@ const blackBtn = document.querySelector('.blackBtn');
 
 const rainbowBtn = document.querySelector('.rainbowBtn'); 
 
+const shaderBtn = document.querySelector('.shaderBtn'); 
+
+const highlightBtn = document.querySelector('.highlightBtn'); 
+
+const randomColorBtn = document.querySelector('.randomColorBtn'); 
+
+const blueBtn = document.querySelector('.blueBtn'); 
+
+const yellowBtn = document.querySelector('.yellowBtn'); 
+
+const greenBtn = document.querySelector('.greenBtn'); 
+
+const redBtn = document.querySelector('.redBtn'); 
+
+const pinkBtn = document.querySelector('.pinkBtn'); 
+
+const purpleBtn = document.querySelector('.purpleBtn'); 
+
+const brownBtn = document.querySelector('.brownBtn'); 
+
 const pixelproContainer = document.querySelector('.pixelproContainer'); 
 
-let random = Math.floor(Math.random() * 255 + 1); 
 
 const gridSize = prompt('Pick A Number Between 1 - 100'); 
 
@@ -32,6 +51,12 @@ if (gridSize >= 101) {
 function reloadGrid() {
     location.reload(); 
 }
+
+let randomR = Math.floor(Math.random() * 200); 
+let randomG = Math.floor(Math.random() * 240); 
+let randomB = Math.floor(Math.random() * 239); 
+
+
 
 const createGrid = () => {
     pixelproContainer.style.gridTemplateColumns = `repeat(${gridSize}, auto)`
@@ -54,11 +79,15 @@ const createGrid = () => {
             return '#' + n.slice(0, 6);
           }        
         eraserBtn.addEventListener('click', () => {
-            COLOR = '#efefef'; 
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = '#efefef'; 
+            })
         })
 
         blackBtn.addEventListener('click', () => {
-            COLOR = '#000001'; 
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = 'black'; 
+            })
         })
 
         rainbowBtn.addEventListener('click', () => {
@@ -66,6 +95,58 @@ const createGrid = () => {
                 gridCell.style.background = `${randomHex()}`
             })
         })
+
+        blueBtn.addEventListener('click', () => {
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = "rgba(0, 0, 255)"
+            })
+        })
+
+        yellowBtn.addEventListener('click', () => {
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = 'rgb(255, 255, 0)'
+            })
+        })
+
+        greenBtn.addEventListener('click', () => {
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = 'rgb(0, 255, 0)'
+            })
+        })
+
+        redBtn.addEventListener('click', () => {
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = 'rgb(255, 0,0)'
+            })
+        })
+
+        pinkBtn.addEventListener('click', () => {
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = 'rgb(255, 193, 203)'; 
+            })
+        })
+
+        purpleBtn.addEventListener('click', () => {
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = 'rgb(255, 0, 255)'; 
+            })
+        })
+
+        brownBtn.addEventListener('click', () => {
+            gridCell.addEventListener('mouseover', () => {
+                gridCell.style.background = 'rgb(165, 42, 42)'; 
+            })
+        })
+
+       
+
+        // shaderBtn.addEventListener('click', () => {
+        //     gridCell.addEventListener('mouseover', () => {
+        //         gridCell.style.background = `rgba(0, 0, 0, 0.3)`; 
+        //     })
+        // })
+
+        
 
 
         
@@ -85,4 +166,3 @@ createGrid();
 
 shakeBtn.addEventListener('click', reloadGrid); 
 
-console.log(`#${random}${random}${random}${random}${random}${random}`)
