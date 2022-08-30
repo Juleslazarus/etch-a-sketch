@@ -1,3 +1,6 @@
+
+/* universal rules  */
+
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 * {
@@ -11,6 +14,8 @@ body {
     background: linear-gradient(to right, #FFD3A5 10%, #FD6585 100%);
 }
 
+/* styles for the header */
+
 .headerWrapper {
     display: flex; 
     justify-content: center;
@@ -21,6 +26,9 @@ body {
     border-radius: 10px;
     background:rgb(255, 255, 255, 0.29); 
 }
+
+/* Styles for the app container  */
+
 .pixelproWrapper {
     display: grid; 
     justify-content: center;
@@ -31,6 +39,8 @@ body {
     padding: 15px; 
 }
 
+/* This section sets up the styles and rules of some of the settings and features */
+/* area */
 .colorBtnContainer {
     display: flex; 
     justify-content: center;
@@ -44,6 +54,9 @@ body {
     gap: 20px; 
     
 }
+
+
+/* styles for all the buttons   */
 
 .shakeBtn, 
 .eraserBtn, 
@@ -59,8 +72,6 @@ body {
     border-radius: 15px; 
     
 }
-
-/* styles for all the buttons   */
 
 .shakeBtn:hover,
 .eraserBtn:hover, 
@@ -79,7 +90,10 @@ body {
     color: rgba(98, 255, 213, 1);
 }
 
-/* styles for the buttons that choose color  */
+/* styles for the buttons that choose colors. this is seperated so that  */
+/* i could have one place where i keep everything that actually marks up the grid  */
+/* but also the buttons that are at the bottom of the screen. This helps me visualize  */
+/* the app better  */
 
 .blueBtn, 
 .yellowBtn, 
@@ -121,11 +135,15 @@ body {
 .brownBtn {
     background: rgba(165, 42, 42, 0.6); 
 }
+
+/* the section below styles the app container as well as the individual grid cells  */
+/* all together  */
+
 .pixelproContainer {
     display: grid; 
     margin-top: 15px; 
-    height: 700px; 
-    width: 700px; 
+    height: 550px; 
+    width: 550px; 
     background: white; 
     box-shadow: 1px 1px 50px 1px rgba(98, 255, 213, 1); 
 }
@@ -134,6 +152,8 @@ body {
     background: #efefef;
 }
 
+
+/* The section below is just for my contact information styling  */
 
 .footer {
     background: rgba(255,255,255,0.3);
@@ -157,4 +177,21 @@ body {
     height: auto; 
     width: 25px; 
     display: grid; 
+  }
+
+  /* this section will be for making Pixel-Pro mobile friendly! */
+
+  @media (max-width: 900px) {
+    .pixelproHeader {
+        font-size: 30px; 
+    }
+    .shakeBtn, 
+    .eraserBtn, 
+    .blackBtn, 
+    .rainbowBtn{
+        font-size: 20px; 
+    }
+    .pixelproWrapper {
+
+    }
   }
