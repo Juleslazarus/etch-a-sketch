@@ -142,8 +142,8 @@ body {
 .pixelproContainer {
     display: grid; 
     margin-top: 15px; 
-    height: 550px; 
-    width: 550px; 
+    height: 480px; 
+    width: 480px; 
     background: white; 
     box-shadow: 1px 1px 50px 1px rgba(98, 255, 213, 1); 
 }

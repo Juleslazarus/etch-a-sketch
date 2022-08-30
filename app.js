@@ -66,7 +66,7 @@ function reloadGrid() {
 const createGrid = () => {
     pixelproContainer.style.gridTemplateColumns = `repeat(${gridSize}, auto)` // this sets the css grid columns
     pixelproContainer.style.gridTemplateRows = `repeat(${gridSize}, auto)` // this sets the css grid rows
-    const widthAndHeight = 550 / gridSize; // this makes it so that no matter how many grid cells there are it'll always fit inside the container that's 700px
+    const widthAndHeight = 480 / gridSize; // this makes it so that no matter how many grid cells there are it'll always fit inside the container that's 700px
 
     for (let i = 0; i < gridSize * gridSize; i++) {
         const gridCell = document.createElement('div'); 
